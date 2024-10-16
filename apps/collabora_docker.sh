@@ -6,7 +6,7 @@ true
 SCRIPT_NAME="Collabora (Docker)"
 SCRIPT_EXPLAINER="This script will install the Collabora Office Server bundled with Docker"
 # shellcheck source=lib.sh
-source /var/scripts/fetch_lib.sh || source <(curl -sL https://raw.githubusercontent.com/nextcloud/vm/main/lib.sh)
+source /var/scripts/fetch_lib.sh || source <(curl -sL https://raw.githubusercontent.com/Aleks-VV/vm/main/lib.sh)
 # To work with https://github.com/nextcloud/richdocuments/pull/2235
 
 # Check for errors + debug code and abort if something isn't right
