@@ -126,7 +126,7 @@ SECURE="$SCRIPTS/setup_secure_permissions_nextcloud.sh"
 # Nextcloud version
 nc_update() {
     CURRENTVERSION=$(sudo -u www-data php $NCPATH/occ status | grep "versionstring" | awk '{print $3}')
-    NCVERSION=$(curl -s -m 900 $NCREPO/ | sed --silent 's/.*href="nextcloud-\([^"]\+\).zip.asc".*/\1/p' | sort --version-sort | grep 29 | tail -1)
+    NCVERSION=$(curl -s -m 900 $NCREPO/ | sed --silent 's/.*href="nextcloud-\([^"]\+\).zip.asc".*/\1/p' | sort --version-sort | grep 30 | tail -1)
     STABLEVERSION="nextcloud-$NCVERSION"
     NCMAJOR="${NCVERSION%%.*}"
     CURRENTMAJOR="${CURRENTVERSION%%.*}"
