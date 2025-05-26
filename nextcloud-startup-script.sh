@@ -482,7 +482,7 @@ else
 fi
 
 # Set correct amount of CPUs for Imaginary
-if does_this_docker_exist nextcloud/aio-imaginary
+if does_this_docker_exist ghcr.io/nextcloud-releases/aio-imaginary
 then
     if which nproc >/dev/null 2>&1
     then
@@ -577,6 +577,9 @@ then
 https://docs.hanssonit.se/s/W6fMouPiqQz3_Mog/virtual-machines-vm/d/W7Du9uPiqQz3_Mr1/nextcloud-vm-machine-configuration?currentPageId=W7D3quPiqQz3_MsE"
 fi
 
+# Repair
+nextcloud_occ maintenance:repair --include-expensive
+
 # Cleanup 2
 apt-get autoremove -y
 apt-get autoclean
@@ -623,7 +626,7 @@ Login to Nextcloud in your browser:
 ### PLEASE HIT OK TO REBOOT ###"
 
 # Reboot
-print_text_in_color "$IGreen" "Installation done, system will now reboot..."
+print_text_in_color "$IGreen" "Installation done! Please hit OK to cleanup the setup files, and reboot the system."
 check_command rm -f "$SCRIPTS/you-can-not-run-the-startup-script-several-times"
 check_command rm -f "$SCRIPTS/nextcloud-startup-script.sh"
 if ! reboot
