@@ -11,7 +11,7 @@
 
 # shellcheck source=lib.sh
 # shellcheck disable=SC2046
-source <(curl -sL https://raw.githubusercontent.com/nextcloud/vm/main/lib.sh)
+source <(curl -sL https://raw.githubusercontent.com/Aleks-VV/vm/main/lib.sh)
 
 # Check for errors + debug code and abort if something isn't right
 # 1 = ON
