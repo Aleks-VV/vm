@@ -6,9 +6,10 @@ if [ -f /var/scripts/fetch_lib.sh ]
 then
     # shellcheck source=static/fetch_lib.sh
     source /var/scripts/fetch_lib.sh
-elif ! source <(curl -sL https://raw.githubusercontent.com/nextcloud/vm/main/static/fetch_lib.sh)
+elif ! source <(curl -sL https://raw.githubusercontent.com/Aleks-VV/vm/main/static/fetch_lib.sh)
+
 then
-    source <(curl -sL https://cdn.statically.io/gh/nextcloud/vm/main/static/fetch_lib.sh)
+    source <(curl -sL https://cdn.statically.io/gh/Aleks-VV/vm/main/static/fetch_lib.sh)
 fi
 
 # Removed in NC 26.0.0.
