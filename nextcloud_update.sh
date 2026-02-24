@@ -15,9 +15,9 @@ if [ -f /var/scripts/fetch_lib.sh ]
 then
     # shellcheck source=static/fetch_lib.sh
     source /var/scripts/fetch_lib.sh
-elif ! source <(curl -sL https://raw.githubusercontent.com/nextcloud/vm/main/static/fetch_lib.sh)
+elif ! source <(curl -sL https://raw.githubusercontent.com/Aleks-VV/vm/main/static/fetch_lib.sh)
 then
-    source <(curl -sL https://cdn.statically.io/gh/nextcloud/vm/main/static/fetch_lib.sh)
+    source <(curl -sL https://cdn.statically.io/gh/Aleks-VV/vm/main/static/fetch_lib.sh)
 fi
 
 # Get all needed variables from the library
@@ -902,7 +902,7 @@ as it's not currently possible to downgrade.\n\nPlease only continue if you have
         if grep -q beta /tmp/prerelease.version
         then
             NCREPO="https://download.nextcloud.com/server/prereleases"
-            NCVERSION=$(curl -s -m 900 $NCREPO/ | sed --silent 's/.*href="nextcloud-\([^"]\+\).zip.asc".*/\1/p' | sort --version-sort | tail -1)
+            NCVERSION=$(curl -s -m 900 $NCREPO/ | sed --silent 's/.*href="nextcloud-\([^"]\+\).zip.asc".*/\1/p' | sort --version-sort | grep 32 | tail -1)
             STABLEVERSION="nextcloud-$NCVERSION"
             rm -f /tmp/prerelease.version
         elif grep -q "rc" /tmp/prerelease.version
