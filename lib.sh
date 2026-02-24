@@ -86,7 +86,7 @@ Confirm by pressing [ENTER]. Cancel by pressing [ESC]."
 MENU_GUIDE="Navigate with the [ARROW] keys and confirm by pressing [ENTER]. Cancel by pressing [ESC]."
 RUN_LATER_GUIDE="You can view this script later by running 'sudo bash $SCRIPTS/menu.sh'."
 # Repo
-GITHUB_REPO="https://raw.githubusercontent.com/nextcloud/vm/main"
+GITHUB_REPO="https://raw.githubusercontent.com/Aleks-VV/vm/main"
 STATIC="$GITHUB_REPO/static"
 LETS_ENC="$GITHUB_REPO/lets-encrypt"
 APP="$GITHUB_REPO/apps"
@@ -126,7 +126,7 @@ SECURE="$SCRIPTS/setup_secure_permissions_nextcloud.sh"
 # Nextcloud version
 nc_update() {
     CURRENTVERSION=$(sudo -u www-data php $NCPATH/occ status | grep "versionstring" | awk '{print $3}')
-    NCVERSION=$(curl -s -m 900 $NCREPO/ | sed --silent 's/.*href="nextcloud-\([^"]\+\).zip.asc".*/\1/p' | sort --version-sort | tail -1)
+    NCVERSION=$(curl -s -m 900 $NCREPO/ | sed --silent 's/.*href="nextcloud-\([^"]\+\).zip.asc".*/\1/p' | sort --version-sort | grep 32 | tail -1)
     STABLEVERSION="nextcloud-$NCVERSION"
     NCMAJOR="${NCVERSION%%.*}"
     CURRENTMAJOR="${CURRENTVERSION%%.*}"
@@ -1522,7 +1522,7 @@ download_verify_nextcloud_stable() {
 while [ -z "$NCVERSION" ]
 do
     print_text_in_color "$ICyan" "Fetching the latest Nextcloud version..."
-    NCVERSION=$(curl -s -m 900 $NCREPO/ | sed --silent 's/.*href="nextcloud-\([^"]\+\).zip.asc".*/\1/p' | sort --version-sort | tail -1)
+    NCVERSION=$(curl -s -m 900 $NCREPO/ | sed --silent 's/.*href="nextcloud-\([^"]\+\).zip.asc".*/\1/p' | sort --version-sort | grep 32 | tail -1)
     STABLEVERSION="nextcloud-$NCVERSION"
     print_text_in_color "$IGreen" "$NCVERSION"
 done
