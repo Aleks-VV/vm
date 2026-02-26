@@ -40,7 +40,7 @@ SCRIPT_NAME="Nextcloud Install Script"
 SCRIPT_EXPLAINER="This script is installing all requirements that are needed for Nextcloud to run.
 It's the first of two parts that are necessary to finish your customized Nextcloud installation."
 # shellcheck source=lib.sh
-if ! source <(curl -sL https://raw.githubusercontent.com/nextcloud/vm/main/static/fetch_lib.sh)
+if ! source <(curl -sL https://raw.githubusercontent.com/Aleks-VV/vm/main/static/fetch_lib.sh)
 then
     source <(curl -sL https://cdn.statically.io/gh/nextcloud/vm/main/static/fetch_lib.sh)
 fi
@@ -1081,7 +1081,7 @@ then
     then
         # Upgrade Realtek drivers
         print_text_in_color "$ICyan" "Upgrading Realtek firmware..."
-        curl_to_dir https://raw.githubusercontent.com/nextcloud/vm/main/network/asusnuc pn51.sh "$SCRIPTS"
+        curl_to_dir https://raw.githubusercontent.com/Aleks-VV/vm/main/network/asusnuc pn51.sh "$SCRIPTS"
         bash "$SCRIPTS"/pn51.sh
     fi
 fi
