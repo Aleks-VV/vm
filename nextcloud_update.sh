@@ -17,7 +17,7 @@ then
     source /var/scripts/fetch_lib.sh
 elif ! source <(curl -sL https://raw.githubusercontent.com/Aleks-VV/vm/main/static/fetch_lib.sh)
 then
-    source <(curl -sL https://cdn.statically.io/gh/Aleks-VV/vm/main/static/fetch_lib.sh)
+    source <(curl -sL https://cdn.statically.io/gh/nextcloud/vm/main/static/fetch_lib.sh)
 fi
 
 # Get all needed variables from the library
@@ -409,7 +409,7 @@ then
     then
         # Upgrade Realtek drivers
         print_text_in_color "$ICyan" "Upgrading Realtek firmware..."
-        curl_to_dir https://raw.githubusercontent.com/nextcloud/vm/main/network/asusnuc pn51.sh "$SCRIPTS"
+        curl_to_dir https://raw.githubusercontent.com/Aleks-VV/vm/main/network/asusnuc pn51.sh "$SCRIPTS"
         bash "$SCRIPTS"/pn51.sh
     fi
 fi
