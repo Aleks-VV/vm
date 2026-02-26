@@ -229,7 +229,7 @@ cat << PIHOLE_UPDATE > "$SCRIPTS/pihole-update.sh"
 if [ -f /var/scripts/fetch_lib.sh ]
 then
     source /var/scripts/fetch_lib.sh
-elif ! source <(curl -sL https://raw.githubusercontent.com/nextcloud/vm/main/static/fetch_lib.sh)
+elif ! source <(curl -sL https://raw.githubusercontent.com/Aleks-VV/vm/main/static/fetch_lib.sh)
 then
     source <(curl -sL https://cdn.statically.io/gh/nextcloud/vm/main/static/fetch_lib.sh)
 fi
