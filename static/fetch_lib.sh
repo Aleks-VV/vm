@@ -21,7 +21,7 @@ fi
 mkdir -p /var/scripts
 if ! [ -f /var/scripts/lib.sh ]
 then
-    if ! curl -sfL https://raw.githubusercontent.com/nextcloud/vm/main/lib.sh -o /var/scripts/lib.sh
+    if ! curl -sfL https://raw.githubusercontent.com/Aleks-VV/vm/main/lib.sh -o /var/scripts/lib.sh
     then
         # Try Statically.io CDN
         if curl -sfL https://cdn.statically.io/gh/nextcloud/vm/main/lib.sh -o /var/scripts/lib.sh
@@ -40,7 +40,7 @@ connection and the local lib isn't available. Hence you cannot run this script."
     fi
 elif ! [ -f /var/scripts/nextcloud-startup-script.sh ]
 then
-    if ! curl -sfL https://raw.githubusercontent.com/nextcloud/vm/main/lib.sh -o /var/scripts/lib.sh
+    if ! curl -sfL https://raw.githubusercontent.com/Aleks-VV/vm/main/lib.sh -o /var/scripts/lib.sh
     then
         # Try Statically.io CDN
         if curl -sfL https://cdn.statically.io/gh/nextcloud/vm/main/lib.sh -o /var/scripts/lib.sh
