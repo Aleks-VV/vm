@@ -2426,10 +2426,10 @@ try_local_backup() {
     fi
     
     # Convert URL to local path
-    # https://raw.githubusercontent.com/nextcloud/vm/main/apps/script.sh -> apps/script.sh
-    # https://raw.githubusercontent.com/nextcloud/vm/main -> (empty, root level)
+    # https://raw.githubusercontent.com/Aleks-VV/vm/main/apps/script.sh -> apps/script.sh
+    # https://raw.githubusercontent.com/Aleks-VV/vm/main -> (empty, root level)
     local path_part
-    path_part=$(echo "$url" | sed 's|https://raw.githubusercontent.com/nextcloud/vm/main||' | sed 's|https://raw.githubusercontent.com/nextcloud/vm/master||' | sed 's|^/||')
+    path_part=$(echo "$url" | sed 's|https://raw.githubusercontent.com/Aleks-VV/vm/main||' | sed 's|https://raw.githubusercontent.com/Aleks-VV/vm/maim||' | sed 's|^/||')
     
     # If path_part is empty, we're downloading from root
     if [ -z "$path_part" ]
